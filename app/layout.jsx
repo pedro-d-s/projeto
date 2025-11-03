@@ -8,17 +8,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative w-full">
-        <div className="flex justify-center fixed top-0 right-0 left-0 p-8 bg-black text-white">
-          <div className="w-full flex justify-between items-center gap-20">
-            <Link href="/" className="title">SITE</Link>
-            <Link href="https://www.mercadolivre.com.br/" target="_blank">Mercado Livre</Link>
-            <Link href="/notification">Notificações</Link>
-            <Link href="/dispara-log">Disparar Log</Link>
-          </div>
-        </div>
-        
-        {children}
+      <body>
+        <div className="flex">
+          <nav className="w-64 h-screen bg-gray-800 text-white p-4 fixed">
+            <h2 className="text-2xl mb-6">Menu</h2>
+            <ul className="flex flex-col gap-4">
+              <li><Link href="/">Página 1</Link></li>
+              <li><Link href="/contato">Página 2</Link></li>
+              <li><Link href="/ex1">Página 3</Link></li>
+            </ul>
+          </nav>
+
+        <main className="ml-64 flex-1 p-8">
+          {children}
+        </main>
+      </div>
       </body>
     </html>
   );
